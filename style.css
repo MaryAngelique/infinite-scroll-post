@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Nuosu SIL', serif;
-    background-color: #aa96da;
+    background-color: #7a46f2;
     color: #ffffd2;
     display: flex;
     flex-direction: column;
@@ -30,6 +30,7 @@ h1 {
 }
 
 .filter {
+    font-family: inherit;
     width: 100%;
     padding: 12px;
     font-size: 16px;
@@ -37,7 +38,7 @@ h1 {
 
 .post {
     position: relative;
-    background-color: #4992d3;
+    background-color: #aa96da;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 3px;
     padding: 20px;
@@ -70,9 +71,49 @@ h1 {
     height: 40px;
     border-radius: 50%;
     background: #fff;
-    color: #296ca8;
+    color: #7a46f2;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 7px 10px;
+}
+
+.loader {
+    opacity: 0;
+    display: flex;
+    position: fixed;
+    bottom: 50px;
+    transition: opacity 0.3s ease-in;
+}
+
+.loader.show {
+    opacity: 1;
+}
+
+.circle {
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px;
+    animation: bounce 0.5s ease-in infinite;
+}
+
+.circle:nth-of-type(2) {
+    animation-delay: 0.1s;
+}
+
+.circle:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
